@@ -60,7 +60,7 @@ function User (name, email){
 }
 ```
 
-The problem is that all of these functions are precisely the same.  They only return different values because the value of `this` is dependent on the object whose method is being called.  Well if we declare a new, yet identical function for every instance of a constructor we are being inefficient.  What we want is a way to declare the function just one time, yet grant each object made from our constructor function a reference to this function.
+The problem is that all of these functions are precisely the same.  They only return different values because the value of `this` is dependent on the object whose method is being called.  Well if we declare a new, yet identical function for every instance of a constructor we are being memory inefficient.  That is, each instance of our object would a different, yet identical, method attached to it.  And in JavaScript, where our code needs to run in a memory-limited browser, this is something we would prefer to avoid. So what we want is a way to declare the function just one time, yet grant each object made from our constructor function a reference to this function.
 
 ### Behold the Prototype!!
 
@@ -121,7 +121,24 @@ It's just a JavaScript object.  That object can store specific attributes.  The 
   // true
 ```
 
-What the above code illustrates is each JavaScript object has reference to attributes declared on its constructor's prototype.  So both `sally` and `freddy` have reference to the sayHello attribute that points to a specific function.  Not only that, but they have reference to **exactly the same function**.  So regardless of the number of objects produced from the User constructor, there will be only one declared sayHello function.
+What the above code illustrates is each JavaScript object has reference to attributes declared on its constructor's prototype.  So both `sally` and `freddy` have reference to the sayHello attribute that points to a specific function.  Not only that, but they have reference to **exactly the same function**.  So regardless of the number of objects produced from the User constructor, there will be only one declared sayHello function.  
+
+Going forward with constructor functions, it's best to separate our code as we did here.
+
+```js
+function User(name, email) {
+  this.name = name;
+  this.email = email;
+}
+
+User.prototype.sayHello = function() {
+  console.log(`Hello everybody, my name is ${this.name}`);
+}
+
+let sarah = new User('sarah', 'sarah@gmail.com')
+```
+
+As you can see, we keep the assignment of properties that point to data inside the function. This makes sense, as these pieces of data are different for each object.  However we move the assignment of properties that point to functions outside of constructor function and onto the constructor's prototype.  This is because unlike the properties pointing to data, these methods are identical between instances of the same constructor.  
 
 ### Summary
 
