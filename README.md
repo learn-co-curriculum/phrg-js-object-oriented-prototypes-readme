@@ -121,7 +121,7 @@ It's just a JavaScript object.  That object can store specific attributes.  The 
   // true
 ```
 
-What the above code illustrates is each JavaScript object has reference to attributes declared on its constructor's prototype.  So both `sally` and `freddy` have reference to the sayHello attribute that points to a specific function.  Not only that, but they have reference to **exactly the same function**.  So regardless of the number of objects produced from the User constructor, there will be only one declared sayHello function.  
+What the above code illustrates is each JavaScript object has reference to attributes declared on its constructor's prototype.  So both `sally` and `freddy` have reference to the `sayHello` attribute that points to a specific function.  Not only that, but they have reference to **exactly the same function**.  So regardless of the number of objects produced from the `User` constructor, there will be only one declared `sayHello` function.  
 
 Going forward with constructor functions, it's best to separate our code as we did here.
 
