@@ -60,7 +60,7 @@ function User (name, email){
 }
 ```
 
-The problem is that all of these functions are precisely the same.  They only return different values because the value of `this` is dependent on the object whose method is being called.  Well if we declare a new, yet identical function for every instance of a constructor we are being memory inefficient.  That is, each instance of our object would a different, yet identical, method attached to it.  And in JavaScript, where our code needs to run in a memory-limited browser, this is something we would prefer to avoid. So what we want is a way to declare the function just one time, yet grant each object made from our constructor function a reference to this function.
+The problem is that all of these functions are precisely the same.  They only return different values because the value of `this` is dependent on the object whose method is being called.  Well if we declare a new, yet identical function for every instance of a constructor we are being memory inefficient.  That is, each instance of our object would be a different, yet identical, method attached to it.  And in JavaScript, where our code needs to run in a memory-limited browser, this is something we would prefer to avoid. So what we want is a way to declare the function just one time, yet grant each object made from our constructor function a reference to this function.
 
 ### Behold the Prototype!!
 
