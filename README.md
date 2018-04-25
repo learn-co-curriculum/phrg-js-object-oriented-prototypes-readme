@@ -143,3 +143,4 @@ As you can see, we keep the assignment of properties that point to data inside t
 ### Summary
 
 In this section, we saw how we can use prototypes to avoid redeclaring identical functions.  We saw that even though we are only declaring the function one time, with the use of a prototype each constructed object has access to the functions defined on its constructor's prototype.
+<p data-visibility='hidden'>PHRG Using Prototypes</p>
