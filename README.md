@@ -143,4 +143,8 @@ As you can see, we keep the assignment of properties that point to data inside t
 ### Summary
 
 In this section, we saw how we can use prototypes to avoid redeclaring identical functions.  We saw that even though we are only declaring the function one time, with the use of a prototype each constructed object has access to the functions defined on its constructor's prototype.
+
+## Does this need an update?https
+ Please open a [GitHub issue](https://github.com/learn-co-curriculum/phrg-js-object-oriented-prototypes-readme/issues) or [pull-request](https://github.com/learn-co-curriculum/phrg-js-object-oriented-prototypes-readme/pulls). Provide a detailed description that explains the issue you have found or the change you are proposing. Then "@" mention your instructor on the issue or pull-request, and send them a link via Connect.
+ 
 <p data-visibility='hidden'>PHRG Using Prototypes</p>
